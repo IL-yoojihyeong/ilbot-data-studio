@@ -1,0 +1,10 @@
+.git
+.venv
+frontend/node_modules
+frontend/dist
+**/__pycache__
+*.egg-info
+robolabel_data
+handoff.md
+.claude
+.env

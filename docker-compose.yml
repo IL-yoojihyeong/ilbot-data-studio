@@ -1,0 +1,16 @@
+services:
+  studio:
+    image: ghcr.io/il-yoojihyeong/ilbot-data-studio:${STUDIO_TAG:-latest}
+    build: .
+    container_name: ilbot-data-studio
+    restart: unless-stopped
+    ports:
+      - "${STUDIO_PORT:-8322}:8322"
+    environment:
+      # 설정 시 전체 UI/API에 HTTP Basic 인증이 걸립니다 (수집기 config와 동일하게)
+      ROBOLABEL_PASSWORD: ${ROBOLABEL_PASSWORD:-}
+      ROBOLABEL_USER: ${ROBOLABEL_USER:-admin}
+    volumes:
+      # 모든 상태(DB·원본·변환본·export)가 이 폴더 하나에 저장됩니다.
+      # 저장 위치를 바꾸려면 .env의 STUDIO_DATA_DIR만 수정 (기본: compose 옆 ./data)
+      - ${STUDIO_DATA_DIR:-./data}:/data
