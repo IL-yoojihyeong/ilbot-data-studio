@@ -42,7 +42,7 @@ Project Center에서 프로젝트 생성.
 - 데이터 전체가 `STUDIO_DATA_DIR` 폴더 하나에 저장됨 → 백업 = 이 폴더 복사
 - 로그: `docker logs ilbot-data-studio`
 
-## 3. 노트북(수집 프로그램) 설치 (~30분)
+## 3. 노트북(수집 프로그램) 설치 
 
 ```bash
 git clone https://github.com/IL-yoojihyeong/ilbot-collector.git
